@@ -1,0 +1,5 @@
+Flask[async]
+faker
+requests
+aiohttp
+pytz
