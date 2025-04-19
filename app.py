@@ -2,13 +2,16 @@ from flask import Flask, jsonify, request
 from faker import Faker
 import random
 import logging
+import os  # <-- added to read environment variables
 from utils import load_file, generate_password, generate_email, validate_email, generate_user_agent, get_current_time, save_address_info, generate_display_info
 from address import get_address
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 fake = Faker()
-port = 3000
+
+# Use Railway-injected port or fallback to 3000 for local
+port = int(os.environ.get("PORT", 3000))
 
 API_KEYS = load_file('api_keys.txt')
 counter = 1
