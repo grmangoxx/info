@@ -2,8 +2,13 @@ from flask import Flask, jsonify, request
 from faker import Faker
 import random
 import logging
-import os  # <-- added to read environment variables
-from utils import load_file, generate_password, generate_email, validate_email, generate_user_agent, get_current_time, save_address_info, generate_display_info
+import os
+import re  # Add this import for regex validation
+from utils import (
+    load_file, generate_password, generate_email, validate_email, 
+    generate_user_agent, get_current_time, save_address_info, 
+    generate_display_info
+)
 from address import get_address
 
 app = Flask(__name__)
@@ -18,6 +23,10 @@ counter = 1
 
 logging.basicConfig(level=logging.DEBUG, format='%(levelname)s - %(message)s')
 logging.getLogger("urllib3").setLevel(logging.CRITICAL)
+
+def is_valid_phone(phone):
+    pattern = r"^\d{3}[2-9]\d{2}\d{4}$"
+    return re.match(pattern, phone) is not None
 
 @app.route('/')
 async def generate_user():
@@ -37,7 +46,13 @@ async def generate_user():
             while not validate_email(email):
                 email = generate_email(username)
 
-            phone = f"760{fake.msisdn()[3:10]}"
+            phone = generate_phone_number()
+
+            # Validate the generated phone number
+            if not is_valid_phone(phone):
+                logging.error(f"Invalid phone number generated: {phone}")
+                continue  # Retry if the phone number is invalid
+
             company = fake.company().lower()
             profession = fake.job().lower()
             guid = fake.uuid4().lower()
@@ -85,6 +100,12 @@ async def generate_user():
 
     logging.error('Failed to generate user after multiple attempts')
     return jsonify({'error': 'Failed to generate user after multiple attempts'}), 500
+
+def generate_phone_number():
+    area_code = f"{random.randint(100, 999)}"
+    central_office_code = f"{random.randint(200, 999)}"  # Ensures the second digit is between 2-9
+    line_number = f"{random.randint(1000, 9999)}"
+    return f"{area_code}{central_office_code}{line_number}"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port)
