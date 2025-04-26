@@ -542,5 +542,101 @@
         "state": "Virginia",
         "state_short": "VA",
         "zip": "24112"
+    },
+    "69": {
+        "street": "State Road 73",
+        "full_address": "N2176 State Road 73",
+        "city": "Wautoma",
+        "state": "Wisconsin",
+        "state_short": "WI",
+        "zip": "54982"
+    },
+    "70": {
+        "street": "Jolly Oak Rd",
+        "full_address": "3647 Jolly Oak Rd",
+        "city": "Okemos",
+        "state": "Michigan",
+        "state_short": "MI",
+        "zip": "48864"
+    },
+    "71": {
+        "street": "N School St",
+        "full_address": "1015 N School St",
+        "city": "Honolulu",
+        "state": "Hawaii",
+        "state_short": "HI",
+        "zip": "96817"
+    },
+    "72": {
+        "street": "Forbes Ave",
+        "full_address": "5032 Forbes Ave",
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "state_short": "PA",
+        "zip": "15289"
+    },
+    "73": {
+        "street": "Heatherden Ave",
+        "full_address": "485 Heatherden Ave",
+        "city": "Fayetteville",
+        "state": "Georgia",
+        "state_short": "GA",
+        "zip": "30214"
+    },
+    "74": {
+        "street": "N Ocean Blvd",
+        "full_address": "2200 N Ocean Blvd",
+        "city": "Fort Lauderdale",
+        "state": "Florida",
+        "state_short": "FL",
+        "zip": "33305"
+    },
+    "75": {
+        "street": "Forbes Ave",
+        "full_address": "5032 Forbes Ave",
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "state_short": "PA",
+        "zip": "15289"
+    },
+    "76": {
+        "street": "Lake Shore Rd",
+        "full_address": "S5100 Lake Shore Rd",
+        "city": "Hamburg",
+        "state": "New York",
+        "state_short": "NY",
+        "zip": "14075"
+    },
+    "77": {
+        "street": "S 1st St",
+        "full_address": "15 S 1st St",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "state_short": "MN",
+        "zip": "55401"
+    },
+    "78": {
+        "street": "Oak Leaf Cir",
+        "full_address": "19967 Oak Leaf Cir",
+        "city": "Cornelius",
+        "state": "North Carolina",
+        "state_short": "NC",
+        "zip": "28031"
+    },
+    "79": {
+        "street": "County Road Tt",
+        "full_address": "N5535 County Road Tt",
+        "city": "Princeton",
+        "state": "Wisconsin",
+        "state_short": "WI",
+        "zip": "54968"
+    },
+    "80": {
+        "street": "Garamont Pkwy NW",
+        "full_address": "9628 Garamont Pkwy NW",
+        "city": "Concord",
+        "state": "North Carolina",
+        "state_short": "NC",
+        "zip": "28027"
     }
 }
